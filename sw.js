@@ -3,6 +3,7 @@ var staticCacheName = 'restaurant-reviews-v1';
 self.addEventListener('install', function (event) {
   event.waitUntil(
     caches.open(staticCacheName).then((cache) => {
+     /* TODO: Caching of All files */
       return cache.addAll([
         '/',
         'index.html',
@@ -29,6 +30,7 @@ self.addEventListener('install', function (event) {
 self.addEventListener('activate', function (event){
      console.log("Service worker activated successfully");
 }
+/* TODO: Fetch from Network and match */
 self.addEventListener('fetch', function (event) {
   var requestUrl = new URL(event.request.url);
 
