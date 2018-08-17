@@ -26,6 +26,9 @@ self.addEventListener('install', function (event) {
   );
 });
 
+self.addEventListener('activate', function (event){
+     console.log("Service worker activated successfully");
+}
 self.addEventListener('fetch', function (event) {
   var requestUrl = new URL(event.request.url);
 
